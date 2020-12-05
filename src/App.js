@@ -22,7 +22,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos)); //Local storage cannot store objects dirretly they can only store strings  so covert this into string
   }, [todos]); //moment you find any change in todos just to do all the stuff in call back.
 
   const markcomplete = (id) => {
@@ -30,11 +30,14 @@ const App = () => {
   };
 
   return (
-    <Container fluid>
-      <h1> todos</h1>
-      <Todos todos={todos} markcomplete={markcomplete} />
-      <TodoForm addTodos={addTodos} />
-    </Container>
+    <div className="container-center">
+      <Container fluid>
+        <h1 style={{ textAlign: "center" }}>Todos</h1>
+        <hr></hr>
+        <TodoForm addTodos={addTodos} />
+        <Todos todos={todos} markcomplete={markcomplete} />
+      </Container>
+    </div>
   );
 };
 

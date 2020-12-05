@@ -1,44 +1,28 @@
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body{
+  color: orangered;
 }
-
-body {
-  position: relative;
-  background-color: rgb(104, 104, 104);
+.container-center{
+  max-width: 800px;
+  margin: auto;
 }
-h1 {
+h1{
+  border:1px solid;
+  background-color: orangered;
+  color: white;
+  padding: 1rem 1rem;
+  /* display: flex; */
+  margin-top: 100px;
+  
   text-align: center;
-  margin-top: 20px;
-  color: aliceblue;
-}
-form {
-  position: fixed;
-  bottom: 500px;
-  right: 30%;
-  left: 30%;
-  border-radius: 8px;
-  border: 2px solid rgb(66, 66, 180);
-  color: #000;
-  box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.5);
+  /* display: inline-flex; */
+  display: block;
+  max-width: 200px;
+  margin: auto;
+  border-radius: 1rem;
 }
 
-.items {
-  position: fixed;
-  top: 300px;
-  right: 30%;
-  left: 30%;
-  border-radius: 8px;
-}
+.button{
+  background-color: white;
+  color: orangered;
 
-.form-group {
-  margin-bottom: 0;
-}
-
-.completedTodo {
-  background-color: darkgray;
-  text-decoration: line-through;
 }

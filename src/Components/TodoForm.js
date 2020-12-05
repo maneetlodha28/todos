@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Calendar from "react-calendar";
 import {
   FormGroup,
   Input,
@@ -14,6 +14,14 @@ import { v4 } from "uuid";
 
 const TodoForm = ({ addTodos }) => {
   const [todoString, setTodoString] = useState("");
+  const [value, onChange] = useState(new Date());
+  const cal = () => {
+    return (
+      <div>
+        <Calendar onChange={onChange} value={value} />
+      </div>
+    );
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,24 +40,26 @@ const TodoForm = ({ addTodos }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <FormGroup>
-        <InputGroup>
-          <Input
-            type="text"
-            name="todo"
-            id="todo"
-            placeholder="Enter a todo"
-            value={todoString}
-            onChange={(e) => setTodoString(e.target.value)}
-          />
+    <div>
+      <Form onSubmit={handleSubmit}>
+        <FormGroup>
+          <InputGroup className="form-p">
+            <Input
+              type="text"
+              name="todo"
+              id="todo"
+              placeholder="Enter a todo"
+              value={todoString}
+              onChange={(e) => setTodoString(e.target.value)}
+            />
 
-          <InputGroupAddon addonType="prepend">
-            <Button color="success">Add Todo</Button>
-          </InputGroupAddon>
-        </InputGroup>
-      </FormGroup>
-    </Form>
+            <InputGroupAddon addonType="append">
+              <Button className="button">Add Todo</Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </FormGroup>
+      </Form>
+    </div>
   );
 };
 
