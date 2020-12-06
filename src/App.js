@@ -31,8 +31,8 @@ const App = () => {
 
   return (
     <div className="container-center">
+      <h1 style={{ textAlign: "center" }}>Todos</h1>
       <Container fluid>
-        <h1 style={{ textAlign: "center" }}>Todos</h1>
         <hr></hr>
         <TodoForm addTodos={addTodos} />
         <Todos todos={todos} markcomplete={markcomplete} />
