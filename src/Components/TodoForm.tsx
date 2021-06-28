@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Calendar from "react-calendar";
+
 import {
   FormGroup,
   Input,
@@ -11,18 +11,14 @@ import {
 } from "reactstrap";
 
 import { v4 } from "uuid";
+interface addTodoProps {
+  addTodos:(todo:{title:string,id:string})=>void
+}
 
-const TodoForm = ({ addTodos }) => {
+const TodoForm: React.FC<addTodoProps> = ({ addTodos }) => {
   const [todoString, setTodoString] = useState("");
-  const [value, onChange] = useState(new Date());
-  const cal = () => {
-    return (
-      <div>
-        <Calendar onChange={onChange} value={value} />
-      </div>
-    );
-  };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = (e:React.FormEvent) => {
     e.preventDefault();
 
     if (todoString === "") {
